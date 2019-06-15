@@ -1,0 +1,69 @@
+﻿<local:UserControlClass x:Class="JENCORECORP.AddDecreadesZone"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JENCORECORP"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tblZnControlHeader" Text="ControlHeader" Grid.Row="0" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnDescription" Text="Description" Grid.Row="1" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnProfitPercentage" Text="ProfitPercentage" Grid.Row="2" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnOveral" Text="Overal" Grid.Row="3" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnLabelColour" Text="LabelColour" Grid.Row="4" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnLabelColour2" Text="LabelColour2" Grid.Row="5" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnStrokeThickness" Text="StrokeThickness" Grid.Row="6" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnWidth" Text="Width" Grid.Row="7" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnHeight" Text="Height" Grid.Row="8" Grid.Column="0"></TextBlock>
+        <TextBlock Name="tblZnName" Text="Name" Grid.Row="9" Grid.Column="0"></TextBlock>
+
+        <local:WatermarkTextBox x:Name="tbZnControlHeader" Watermark="ControlHeader" Grid.Row="0" Grid.Column="2"></local:WatermarkTextBox>
+        <local:WatermarkTextBox x:Name="tbZnDescription" Watermark="Description" Grid.Row="1" Grid.Column="2"></local:WatermarkTextBox>
+        <local:WatermarkTextBox x:Name="tbZnProfitPercentage" Watermark="ProfitPercentage" Grid.Row="2" Grid.Column="2"></local:WatermarkTextBox>
+        <local:WatermarkTextBox x:Name="tbZnOveral" Watermark="Overal" Grid.Row="3" Grid.Column="2"></local:WatermarkTextBox>
+        <ComboBox x:Name="cbZnLabelColour" Grid.Row="4" Grid.Column="2">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="cbZnLabelColour2" Grid.Row="5" Grid.Column="2">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <local:WatermarkTextBox x:Name="tbZnStrokeThickness" Watermark="StrokeThickness" Grid.Row="6" Grid.Column="2"></local:WatermarkTextBox>
+        <local:WatermarkTextBox x:Name="tbZnWidth" Watermark="Width" Grid.Row="7" Grid.Column="2"></local:WatermarkTextBox>
+        <local:WatermarkTextBox x:Name="tbZnHeight" Watermark="Height" Grid.Row="8" Grid.Column="2"></local:WatermarkTextBox>
+        <local:WatermarkTextBox x:Name="tbZnName" Watermark="Name" Grid.Row="9" Grid.Column="2"></local:WatermarkTextBox>
+        <Button Name="btnAdd" Grid.Row="10" Grid.Column="0" Content="Add" Click="btnAdd_Click"></Button>
+    </Grid>
+</local:UserControlClass>

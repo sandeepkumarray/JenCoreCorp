@@ -1,0 +1,164 @@
+﻿<Window x:Class="JENCORECORP.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:JENCORECORP" 
+        xmlns:swf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"    
+         xmlns:GadgetLibrary="clr-namespace:DragCanvas;assembly=DragCanvas" Background="LawnGreen"
+        Title="Dashboard" Height="700" Width="1080" ResizeMode="NoResize" SizeToContent="Manual" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <!--Template="{StaticResource ChromelessWindowTemplate}"-->
+    <Window.DataContext>
+        <local:Applications/>
+    </Window.DataContext>
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="3" Height="30" VerticalAlignment="Top" Background="{DynamicResource TitleBarBackground}">
+            <Grid MouseDown="Border_MouseDown">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="My Window" TextBlock.TextAlignment="Justify" FontWeight="Bold"></Label>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Template="{DynamicResource MinimizeIcon}" x:Name="btnMinimise" Click="btnMinimise_Click" Width="20">
+                        <Image Source="Images/1361558391_minus.png" Width="15"></Image>
+                    </Button>
+                    <Button Template="{DynamicResource MaximizeIcon}" x:Name="btnMaximise" Click="btnMaximise_Click" Width="20">
+                        <Image Source="Images/1361558363_new_window.png" Width="15"></Image>
+                    </Button>
+                    <Button Template="{DynamicResource CloseIcon}" x:Name="btnClose" Click="btnClose_Click" Width="20">
+
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="9" Height="auto" Background="Transparent">
+            <Grid>
+                <Grid Height="auto" Name="grdMainTile">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                    </Grid.RowDefinitions>                 
+                    <!--<local:TileItemSquare DataContext="{Binding Employee}" TitleTitle="Employee" CanSlide="True" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" ></local:TileItemSquare>
+                <local:TileItemSquare DataContext="{Binding Materials}" TitleTitle="Materials" CanSlide="True" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" ></local:TileItemSquare>
+                <local:TileItemSquare DataContext="{Binding Supplier}" TitleTitle="Supplier" CanSlide="False" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" ></local:TileItemSquare>
+                <local:TileItemSquare DataContext="{Binding Help}" TitleTitle="Help" CanSlide="False" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" ></local:TileItemSquare>
+                <local:TileItem DataContext="{Binding Help}" TitleTitle="Help" CanSlide="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" ></local:TileItem>-->
+                    <local:UserControlClass  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" x:Name="appControl">
+                    </local:UserControlClass>
+                </Grid>
+                <Grid Height="auto" Name="grdDragFlow" Visibility="Hidden" Background="Gray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                        <RowDefinition Height="210"/>
+                    </Grid.RowDefinitions>
+                    <GadgetLibrary:DragCanvas x:Name="_SnapCanvas"
+                                  Grid.Row="0"
+                                  AllowDragging="False"
+                                  SnapThreshold="20"
+                                  AllowDragOutOfView="False"  Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="3">
+                    </GadgetLibrary:DragCanvas>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <Border Grid.Row="10" Grid.ColumnSpan="3" Height="30" VerticalAlignment="Bottom" Background="{DynamicResource TitleBarBackground}">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="0,0,0,0" Background="Transparent">
+                    <Popup IsOpen="False" StaysOpen="False" Width="200" Margin="0,-350,0,0" HorizontalAlignment="Left" Height="350" Name="ppStart" >
+                        <Grid Background="{DynamicResource TitleBarBackground}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Template="{DynamicResource NoChromeButtonTemp}" Name="btnSpecialProjects" Click="btnSpecialProjects_Click" Visibility="Hidden">Special Projects</Button>
+                            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Template="{DynamicResource NoChromeButtonTemp}" Name="btnDecreadesZones" Click="btnDecreadesZones_Click">Decreades Zones</Button>
+                            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Template="{DynamicResource NoChromeButtonTemp}" Name="btnJenCmd" Click="btnJenCmd_Click">JenCore Command</Button>
+                            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Template="{DynamicResource NoChromeButtonTemp}" Name="btnRadarControl" Click="btnRadarControl_Click">Security</Button>
+                            <local:SearchBox x:Name="Searchbox" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Width="190" Height="30"></local:SearchBox>
+                        </Grid>
+                    </Popup>
+                    <Button Style="{StaticResource NoChromeButton}" x:Name="btnStart" Width="30" Height="30" HorizontalAlignment="Left" Click="btnStart_Click">
+                        <Image Source="Images/1394194762_installing_updates.png"></Image>
+                    </Button>
+                </StackPanel>
+                <TextBlock Width="100" Height="30" HorizontalAlignment="Right" x:Name="lblStatus" Foreground="#FFE4FFD8" FontSize="20" TextTrimming="WordEllipsis"></TextBlock>
+                <Button Name="btnMenuStrip" Width="30" Height="30" HorizontalAlignment="Left" Click="btnMenuStrip_Click" ToolTip="Menu"></Button>
+                <Button Name="btnWorkSpace" Width="30" Height="30" HorizontalAlignment="Left" Click="btnWorkSpace_Click" ToolTip="Work Space"></Button>
+            </StackPanel>
+        </Border>
+        <local:ChildWindow x:Name="_modalchildWindow" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="24" Grid.Row="1"
+                           Width="auto"
+                           Height="auto"                           
+                           IsModal="True"
+                           WindowStartupLocation="Manual"                              
+                           WindowState="Closed">
+            <local:ChildWindow.Caption>
+                <StackPanel Orientation="Horizontal">
+                    <!--<Image Source="/CDC;component/Images/1394197219_organization.png" Height="20" Width="20"></Image>-->
+                    <TextBlock></TextBlock>
+                </StackPanel>
+            </local:ChildWindow.Caption>
+        </local:ChildWindow>
+        <local:ChildWindow x:Name="_menuchildWindow" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="24" Grid.Row="1"
+                           Width="auto"
+                           Height="auto"                           
+                           IsModal="True"
+                           WindowStartupLocation="Manual"                              
+                           WindowState="Closed">
+            <local:ChildWindow.Caption>
+                <StackPanel Orientation="Horizontal">                    
+                    <TextBlock></TextBlock>
+                </StackPanel>
+            </local:ChildWindow.Caption>
+        </local:ChildWindow>
+    </Grid>
+</Window>

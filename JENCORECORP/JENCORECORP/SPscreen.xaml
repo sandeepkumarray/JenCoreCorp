@@ -1,0 +1,30 @@
+﻿<Window x:Class="JENCORECORP.SPscreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="My application"   
+        xmlns:local="clr-namespace:JENCORECORP"
+        x:Name="spashScreen" Width="500" Height="300" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
+    <Window.Background>
+        <SolidColorBrush />
+    </Window.Background>
+    <Grid >
+
+        <local:Bubble LabelColour="LightGoldenrodYellow" Height="250" Width="250" LabelColour2="Gold" StrokeThickness="12"></local:Bubble>
+            <TextBlock  FontFamily="Verdana" FontWeight="Bold" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"  Margin="0,40,0,0" >
+                <!--<Run Text="Dynamic" Foreground="#FF006AB3" />
+                <LineBreak/>
+                <Run Text="splash screen" Foreground="#FF006AB3"/>-->
+            </TextBlock>
+
+            <TextBlock Text="{Binding ElementName=spashScreen, Path=Message}" VerticalAlignment="Bottom" Width="200"  Margin="138,0,140,138"/>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,170,77">
+                <TextBlock Text="{Binding ElementName=spashScreen, Path=Version}" VerticalAlignment="Bottom"  Margin="0,0,0,10" HorizontalAlignment="Right"/>
+                <!--<ItemsControl ItemsSource="{Binding ElementName=spashScreen, Path=AvailablePlugins}" Margin="0,0,0,10" HorizontalAlignment="Right"/>-->
+                <StackPanel Orientation="Horizontal">
+                    <!--<TextBlock Text="Licensed to: "/>-->
+                    <TextBlock Text="{Binding ElementName=spashScreen, Path=Licensee}" />
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+</Window>

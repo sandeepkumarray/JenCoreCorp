@@ -1,0 +1,23 @@
+﻿<local:UserControlClass x:Class="JENCORECORP.WeatherDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:GadgetLibrary="clr-namespace:DragCanvas;assembly=DragCanvas"
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:JENCORECORP"
+             Height="400" Width="600">
+    <Grid>
+        <GadgetLibrary:DragCanvas x:Name="_SnapCanvas"
+                                  Grid.Row="1"
+                                  AllowDragging="True"
+                                  SnapThreshold="20"
+                                  AllowDragOutOfView="False">
+            <GadgetLibrary:DragUserControlContent IsCloseButtonVisible="False">
+                <GadgetLibrary:DragUserControlContent.Gadget>
+                    <local:WeatherTile DataContext="{Binding Supplier}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" ></local:WeatherTile>
+               </GadgetLibrary:DragUserControlContent.Gadget>
+            </GadgetLibrary:DragUserControlContent>
+        </GadgetLibrary:DragCanvas>
+    </Grid>
+</local:UserControlClass>

@@ -1,0 +1,19 @@
+﻿<local:UserControlClass x:Class="JENCORECORP.JENCORECMD"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:local="clr-namespace:JENCORECORP"
+             Height="300" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25" />            
+        </Grid.RowDefinitions>
+        <RichTextBox Grid.Row="0" Foreground="Gray" Background="Black" FontFamily="Consolas" x:Name="rtbConsole" BorderBrush="Black" IsReadOnly="True" KeyDown="rtbConsole_KeyDown" PreviewKeyDown="rtbConsole_PreviewKeyDown">           
+        </RichTextBox>
+        <TextBox Name="txtCmd"  Grid.Row="1" Foreground="Gray" Background="Black" FontFamily="Consolas" BorderBrush="Black" Visibility="Hidden" PreviewKeyDown="txtCmd_PreviewKeyDown"></TextBox>
+    </Grid>
+</local:UserControlClass>

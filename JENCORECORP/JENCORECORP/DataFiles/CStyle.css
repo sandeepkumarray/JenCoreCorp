@@ -1,0 +1,69 @@
+body {
+}
+
+.clear { clear:both;}
+.main-container { width:1000px; margin:0px auto; clear:both; overflow:auto; position:relative;}
+.innerpage-center { width:960px; margin:0px auto; padding:20px; background-color:#ececec;}
+.innerpage-center p { margin-bottom:10px;}
+
+.main-container .col-left{ float:left; background-color:#ececec; width:365px; min-height:440px;}
+.main-container .col-right { float:right; width:630px;}
+
+.col-left img { margin-top:40px; border-left:none;}
+
+.fullscreen { background:none; overflow:hidden;}
+.fullscreen .page-title { margin:30px 0px 20px; font-size:20px; text-transform:uppercase; color:#555555; overflow:hidden;}
+
+.form-box {background-color: #FFFFFF; border: 1px solid #EDEDED;border-radius:4px; min-height:320px;margin:40px 30px -3px; padding:20px 30px;}
+.remember { margin-top:10px; color:#474747; font-size:14px;}
+.remember a { float:right; }
+.form-box .form-row { clear:both; padding:8px 10px; overflow:inherit; display:block;}
+.form-box .form-row .title { font-size:24px; font-weight:bold; line-height:30px; color:#333; margin-bottom:2px; padding:0; font-family: "MyriadPro-Bold", Arial, Helvetica,sans-serif; text-transform:uppercase;}
+.form-tspace .title { margin-top:50px;}
+
+.form-box .form-row .label { float:left; width:42%; text-align:right; margin-right:10px;font-size:17px; font-weight:bold; line-height:24px; color:#6b6b6b; padding-top:5px;}
+.form-box .form-row .control { float:left; width:55%;}
+.form-box .form-row .txtbox, .form-box .form-row .dropdown { font-size:14px; color:#555; border:1px solid #c6c6c6;}
+.form-box .form-row .txtbox { padding:4px 5px; width:85%;}
+.form-box .form-row .chkbox { margin:0px; padding:0px;}
+.form-box .form-row .dropdown {padding:4px; width:85%;}
+.form-box .btn-row { margin-top:10px;}
+.btn-center { text-align:center;}
+.txtbox [disable="disabled"] { background:#d7d7d7;}
+
+.required { font-size:13px; text-transform:capitalize; font-weight:normal; float:right;}
+.mandatory { color:#ff0000; font-size:13px; margin-left:3px;}
+
+.form-center { width:1000px; margin:0px auto 15px; padding:0px; background-color:#F3F3F3;}
+.form-center .form-page { padding:20px 30px; overflow:hidden;}
+
+.form-page .form-row { clear:both; padding:5px 0px;}
+.form-page .form-row .label { float:left; width:180px; text-align:left; font-size:15px; font-weight:bold; line-height:20px; color:#6b6b6b; padding-top:5px;}
+.form-page .form-row .control { float:left; width:260px; padding-bottom:10px;}
+.form-page .form-row .txtbox, .calculator-form .form-row .dropdown { font-size:14px; color:#6b6b6b; border:1px solid #c6c6c6;}
+.form-page .form-row .txtbox { padding:3px 5px; width:80%;}
+.form-page .form-row .chkbox { margin:0px; padding:0px;}
+.form-page .form-row .dropdown {padding:3px; width:85%;}
+
+.form-detail { padding:20px 25px; border-bottom:1px solid #fff; }
+.form-detail .col-one { float:left; width:60%;}
+.form-detail .col-one .clogo { float:left; width:140px; margin-right:15px; border:1px solid #e2e2e2;}
+.form-detail .col-one .cpname { float:left; width:300px;}
+.form-detail .col-one .cname {font-size:18px; font-weight:bold; color:#555; padding-top:5px;}
+.form-detail .col-one .pname {font-size:16px; color:#555; padding-top:5px;}
+.form-detail .label { font-size:18px; color:#555; font-weight:bold; padding-top:5px;}
+.form-detail .col-two { float:left; width:40%;}
+.form-detail .col-two .value {font-size:20px; font-weight:bold; color:#9468AD; padding-top:5px;}
+
+.two-column .form-row .label { width:47% !important;}
+.two-column .form-row .control { width:53% !important;}
+.smalltxt { font-size:12px; font-weight:normal;}
+.rdobox { font-size:14px !important;}
+.grouped { padding:0px 50px;}
+.unbold { font-weight:normal !important; }
+
+
+.form-title { font-size:18px; color:#9468AD; text-transform:uppercase; margin-bottom:10px; padding-bottom:5px; border-bottom:1px solid #D1D1D1; position:relative;}
+.form-title a { background-image: url(../Images/loading_animation.gif); background-repeat:no-repeat; display:block; position:absolute; right:0px; top:0px; width:35px; height:24px; display:block;} 
+.form-title a.active { background-image: url(../Images/GreenDot (2).png); background-repeat:no-repeat; display:block;}
+.form-box .form-title { border-bottom:1px solid #ededed;}

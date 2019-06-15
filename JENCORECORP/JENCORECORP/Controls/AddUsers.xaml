@@ -1,0 +1,48 @@
+﻿<local:UserControlClass x:Class="JENCORECORP.AddUsers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JENCORECORP"
+             mc:Ignorable="d" 
+             Height="300" Width="300">
+    <Grid>
+        <Grid Background="{DynamicResource TitleBarBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1" Grid.Column="0" Name="LblUserName" Text="User Name" Height="25" VerticalAlignment="Center" TextAlignment="Left"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Name="LblUserLoginId" Text="User Login Id" Height="25" VerticalAlignment="Center"  TextAlignment="Left"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0" Name="LblUserPassword" Text="User Password" Height="25" VerticalAlignment="Center"  TextAlignment="Left"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="0" Name="LblUserIsActive" Text="User Active" Height="25" VerticalAlignment="Center"  TextAlignment="Left"></TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="0" Name="LblUserRoleType" Text="User Role Type" Height="25" VerticalAlignment="Center"  TextAlignment="Left"></TextBlock>
+            <local:WatermarkTextBox Grid.Row="1" Grid.Column="1" x:Name="TxtUserName" Watermark="Name" Height="25" VerticalAlignment="Center"></local:WatermarkTextBox>
+            <local:WatermarkTextBox Grid.Row="2" Grid.Column="1" x:Name="TxtUserLoginId" Watermark="Login Id" Height="25" VerticalAlignment="Center"></local:WatermarkTextBox>
+            <local:WatermarkTextBox Grid.Row="3" Grid.Column="1" x:Name="TxtUserPassword" Watermark="Password" Height="25" VerticalAlignment="Center"></local:WatermarkTextBox>
+            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <RadioButton GroupName="Active" Name="UserActive">Active</RadioButton>
+                <RadioButton GroupName="Active" Name="UserInActive">InActive</RadioButton>
+            </StackPanel>
+            <ComboBox Grid.Row="5" Grid.Column="1" Name="cbRoleType" Height="25">
+                <ComboBoxItem Content="Admin" />
+                <ComboBoxItem Content="Manager" />
+                <ComboBoxItem Content="CEO" />
+                <ComboBoxItem Content="OMAC" />
+            </ComboBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Width="120">
+                <Button Name="BtnSave" Height="25" Width="auto" Content="_Save" HorizontalAlignment="Left" Click="BtnSave_Click"></Button>
+                <Button Name="BtnCancel" Height="25" Width="auto" Content="_Cancel" HorizontalAlignment="Right" Click="BtnCancel_Click"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</local:UserControlClass>
